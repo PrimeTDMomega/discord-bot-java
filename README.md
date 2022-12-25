@@ -19,3 +19,8 @@ To make a Discord bot in Java, you will need to use the Discord API and a Java l
 5. Next, you will need to install a Java library for interacting with the Discord API. One option is JDA (Java Discord API), which can be found at https://github.com/DV8FromTheWorld/JDA. To install JDA, you will need to add it as a dependency to your project.
 
 **NOTE:** If you're gonna use Maven then you will need to add the sample code given in your `pom.xml`
+
+
+This sammple code creates a simple bot that listens for messages starting with "!hello" and responds with a greeting.
+
+To create a meme Discord bot, you can modify this code to include functionality for generating memes. This could involve using an API or library
