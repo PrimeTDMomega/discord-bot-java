@@ -1,26 +1,32 @@
+# Advanced Discord Bot
+To create an advanced Discord bot in Java, you will need to use a library called JDA (Java Discord API). Here are the steps you can follow to create your bot:
+1. Install the Java Development Kit (JDK) and the Integrated Development Environment (IDE) of your choice (e.g. Eclipse or IntelliJ IDEA).
+2. Create a new Java project in your IDE and add the JDA dependency to your project. You can do this by adding the following to your build.gradle file:
+  ```
+  repositories {
+    mavenCentral()
+}
 
-
-# Create Discord bot Java
-
-
-
-Make a meme discord bot in Java
-
-To make a Discord bot in Java, you will need to use the Discord API and a Java library for interacting with the API, such as JDA (Java Discord API). Here are the steps you can follow to create a Discord bot in Java:
-
-1. First, create a new Discord account for your bot if you don't already have one.
-
-2. Go to the Discord Developer Portal (https://discord.com/developers/applications/) and create a new application. Give your application a name, and then click on the "Create" button.
-
-3. Click on the "Create a Bot" button in the sidebar on the left. This will create a new bot for your application.
-
-4. Click on the "Copy" button next to the "TOKEN" field to copy your bot's token to your clipboard. This token will be used to authenticate your bot with the Discord API.
-
-5. Next, you will need to install a Java library for interacting with the Discord API. One option is JDA (Java Discord API), which can be found at https://github.com/DV8FromTheWorld/JDA. To install JDA, you will need to add it as a dependency to your project.
-
-**NOTE:** If you're gonna use Maven then you will need to add the sample code given in your `pom.xml`
-
-
-This sammple code creates a simple bot that listens for messages starting with "!hello" and responds with a greeting.
-
-To create a meme Discord bot, you can modify this code to include functionality for generating memes. This could involve using an API or library
+dependencies {
+    implementation 'net.dv8tion:JDA:4.2.0_214'
+}
+```
+3. Create a new Discord bot by going to the Discord Developer Portal (https://discordapp.com/developers/applications/) and clicking "New Application". Give your bot a name and click "Create".
+4. In the "Settings" tab, click on "Create a Bot" and then click "Yes, do it!". This will generate a token for your bot, which you will use to authenticate the bot with the Discord API.
+5. Go to the "OAuth2" tab and select the "bot" scope. Then, select the permissions your bot will need (e.g. "Send Messages", "Read Message History", etc.). Click "Copy" to copy the OAuth2 URL and then paste it into your browser to invite the bot to your Discord server.
+6. In your Java project, create a new class and import the necessary JDA classes. Then, use the JDABuilder class to build and authenticate the bot with your token:
+  ```
+  JDA jda = new JDABuilder(TOKEN)
+                .addEventListeners(new MyEventListener())
+                .build();
+```
+7. Create a class for your event listener, which will be responsible for handling events such as messages being sent in a channel. You can do this by extending the EventAdapter class and overriding the methods for the events you want to handle:
+  ```
+  public class MyEventListener extends EventAdapter {
+    @Override
+    public void onMessageReceived(MessageReceivedEvent event) {
+        // handle the event here
+    }
+}
+```
+8. Use the JDA instance to send messages, react to messages, and perform other actions as needed.
