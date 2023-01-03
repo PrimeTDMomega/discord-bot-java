@@ -32,4 +32,4 @@ dependencies {
 8. Use the JDA instance to send messages, react to messages, and perform other actions as needed.
 
 ## MEME BOT
-I have 
+I have a meme bot template over on the [`meme`](https://github.com/PrimeTDMomega/discord-bot-java/tree/meme/) branch.
