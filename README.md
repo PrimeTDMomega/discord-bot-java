@@ -30,3 +30,6 @@ dependencies {
 }
 ```
 8. Use the JDA instance to send messages, react to messages, and perform other actions as needed.
+
+## MEME BOT
+I have 
